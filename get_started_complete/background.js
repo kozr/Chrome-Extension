@@ -4,17 +4,18 @@ function setup() {
   let img = createImg('images/' + r + '.jpg');
   img.size(windowWidth, windowHeight);
   img.position(0, 0);
+
 }
 
-function set_body_height() { // set body height = window height
+function set_body_height() { 
   $('body').height($(window).height());
 
 }
 $(function () {
 
-  $(':text').bind('keydown', function (e) { //on keydown for all textboxes  
+  $(':text').bind('keydown', function (e) { 
 
-    if (e.keyCode == 13) //if this is enter key  
+    if (e.keyCode == 13)
 
       e.preventDefault();
 
@@ -59,25 +60,34 @@ function saveTaskLocal(e) {
 
 }
 */
-var i = 1;
+
 $(document).ready(
   function () {
+    for (i = 0; i < 20; i++) {
+      if (localStorage.getItem(i) !== null) {
+        var toAdd = localStorage.getItem(i);
+        $('ol').append('<li id=' + i + '>' + toAdd + '</li>');
+      }
+    };
     $('#xbutton').click(
 
+
       function () {
-        
-        if (i < 16) {
-          i++;
-          var toAdd = $('input[name=ListItem]').val();
+        for (i = 0; i < 20; i++) {
+          if (localStorage.getItem(i) == null) {
+            i;
 
-        localStorage.setItem(i, JSON.stringify(toAdd));
+            var toAdd = $('input[name=ListItem]').val();
 
-        $('ol').append('<li>' + toAdd + '</li>');
-        $("#clear").val('');
+            localStorage.setItem(i, JSON.stringify(toAdd));
+
+            $('ol').append('<li id=' + i + '>' + toAdd + '</li>');
+            $("#clear").val('');
+            break;
+
+
+          }
         }
-       
-        
-        
       });
 
     $("input[name=ListItem]").keyup(function (event) {
@@ -88,6 +98,8 @@ $(document).ready(
 
     $(document).on('dblclick', 'li', function () {
       $(this).toggleClass('strike').fadeOut('slow');
+      var itemID = jQuery(this).attr("id");
+      localStorage.removeItem(itemID);
     });
 
     $('input').focus(function () {
