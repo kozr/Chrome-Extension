@@ -1,23 +1,30 @@
 {
-	"name": "ANNA WEI",
-	"version": "1.0",
-	"description": "Anna's homepage",
-	"permissions": ["activeTab", "declarativeContent", "storage", "tabs"],
-	"options_page": "index.html",
+	"name": "NA",
+	"version": "0.0.0.1",
+	"description": "UX stage",
+	"permissions": [ "activeTab", "declarativeContent", "storage", "tabs" ],
+	"options_ui": {
+		"page": "popup.html",
+		"open_in_tab": false
+	},
 	"chrome_url_overrides": {
 		"newtab": "index.html"
 	},
 	"background": {
-		"scripts": [ "jquery.min.js", "jquery-ui.js", "background.js"],
+		"scripts": [ "jquery.min.js", "jquery-ui.js", "background.js" ],
 		"persistent": false
-	  },
+	},
 	"icons": {
 		"16": "images/get_started16.png",
 		"32": "images/get_started32.png",
 		"48": "images/get_started48.png",
 		"128": "images/get_started128.png"
 	},
+	"browser_action": {
+		"default_icon": "images/get_started32.png"
+	},
 	"manifest_version": 2
-	
+
 }
+
 
