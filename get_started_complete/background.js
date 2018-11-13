@@ -11,6 +11,10 @@ function set_body_height() {
   $('body').height($(window).height());
 
 }
+$('#feedback').on('click', function(){
+  window.location.assign = "http://www.google.com/";    
+});
+
 $(function () {
 
   $(':text').bind('keydown', function (e) { 
@@ -34,6 +38,9 @@ $(document).ready(function () {
 });
 
 
+/*
+document.getElementById("Feedback").addEventListener("onclick", )
+*/
 /*
 document.getElementById("ToDoList").addEventListener("button", saveTaskLocal());
 

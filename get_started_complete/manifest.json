@@ -1,17 +1,22 @@
 {
 	"name": "NA",
-	"version": "0.0.0.1",
+	"version": "0.0.0.2",
 	"description": "UX stage",
-	"permissions": [ "activeTab", "declarativeContent", "storage", "tabs" ],
+	"author": "Nicholas Wong",
+	"permissions": ["activeTab", "declarativeContent", "storage", "tabs"],
+	"browser_action": {
+		"default_popup": "popup.html",
+		"default_icon": "images/get_started32.png"
+	},
 	"options_ui": {
 		"page": "popup.html",
-		"open_in_tab": false
+		"open_in_tab": true
 	},
 	"chrome_url_overrides": {
 		"newtab": "index.html"
 	},
 	"background": {
-		"scripts": [ "jquery.min.js", "jquery-ui.js", "background.js" ],
+		"scripts": ["jquery.min.js", "jquery-ui.js", "background.js"],
 		"persistent": false
 	},
 	"icons": {
@@ -20,11 +25,7 @@
 		"48": "images/get_started48.png",
 		"128": "images/get_started128.png"
 	},
-	"browser_action": {
-		"default_icon": "images/get_started32.png"
-	},
+
 	"manifest_version": 2
 
 }
-
-
