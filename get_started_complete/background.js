@@ -4,20 +4,26 @@ function setup() {
   let img = createImg('images/' + r + '.jpg');
   img.size(windowWidth, windowHeight);
   img.position(0, 0);
-
+}
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
 
-function set_body_height() { 
+function set_body_height() {
   $('body').height($(window).height());
 
 }
-$('#feedback').on('click', function(){
-  window.location.assign = "http://www.google.com/";    
+
+$('#Search').keyup(function (event) {
+  if (event.keyCode == 13) {
+    var q = $("input[name=Google]").val();
+    window.open('http://google.com/search?q=' + q);
+  }
 });
 
 $(function () {
 
-  $(':text').bind('keydown', function (e) { 
+  $(':text').bind('keydown', function (e) {
 
     if (e.keyCode == 13)
 
@@ -96,7 +102,13 @@ $(document).ready(
           }
         }
       });
-
+      $(window).on('resize', function(){
+        noCanvas();
+        let r = day();
+        let img = createImg('images/' + r + '.jpg');
+        img.size(windowWidth, windowHeight);
+        img.position(0, 0);
+      });
     $("input[name=ListItem]").keyup(function (event) {
       if (event.keyCode == 13) {
         $("#xbutton").click();
@@ -133,18 +145,4 @@ for (i = 0; i < coll.length; i++) {
       content.style.display = "block";
     }
   });
-}
-
-document.onkeyup = KeyCheck;
-
-function KeyCheck(e) {
-  var KeyID = (window.event) ? event.keyCode : e.keyCode;
-
-  switch (KeyID) {
-
-    case 49:
-      window.location = "index.html";
-      break;
-
-  }
 }
