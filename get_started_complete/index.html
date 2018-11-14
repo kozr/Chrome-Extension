@@ -9,6 +9,7 @@
     <script type="text/javascript" src="jquery.min.js"></script>
     <script src="p5.min.js" type="text/javascript"></script>
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="background.js" type="text/javascript"></script>
     <link href="css/bootstrap.css" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
@@ -85,12 +86,6 @@
             color: #000;
         }
 
-        /*
-        ol li:nth-child(even) {
-            background: #dfdfdf;
-        }
-*/
-
         .strike {
             text-decoration: line-through;
         }
@@ -107,6 +102,7 @@
             text-align: center;
             line-height: 380%;
             font-weight: 700;
+            height: 388px;
         }
 
         h2 {
@@ -150,38 +146,97 @@
             width: 38%;
             text-align: left;
             padding-left: 20px;
-            border-color: lightcyan;
-
-        
+            position: relative;
+            z-index: 8;
+            background:rgba(255, 255, 255, .85);
+            border: none;
+            font-size: 10pt;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 20px;
+            margin-top: 15%;
         }
+        .hvr-float-shadow {
+            display: inline-block;
+            vertical-align: middle;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+            position: relative;
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-transition-property: transform;
+            transition-property: transform;
+        }
+
+        .hvr-float-shadow:hover, .hvr-float-shadow:focus, .hvr-float-shadow:active {
+            -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+            /* move the element up by 5px */
+        }
+        .hvr-float-shadow:hover:before, .hvr-float-shadow:focus:before, .hvr-float-shadow:active:before {
+            opacity: 1;
+            -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+        /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+        }
+
+
+        .hvr-float-shadow1 {
+            display: inline-block;
+            vertical-align: middle;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+            position: relative;
+            -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+            -webkit-transition-property: transform;
+            transition-property: transform;
+        }
+
+        .hvr-float-shadow1:focus, .hvr-float-shadow1:focus, .hvr-float-shadow1:active {
+            -webkit-transform: translateY(-600%);
+            transform: translateY(-600%);
+            /* move the element up by 5px */
+        }
+        .hvr-float-shadow1:focus:before, .hvr-float-shadow1:focus:before, .hvr-float-shadow1:active:before {
+            opacity: 1;
+            -webkit-transform: translateY(600%);
+            transform: translateY(600%);
+        /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+        }
+
+   
+
+
     </style>
 
 
 <body>
     <div class="container-fluid">
-        <h1 id="bootstrap-overrides" class="noSelect"> study up
+        <h1 id="bootstrap-overrides" class="noSelect container"> study up
         </h1>
         <center>
-            <input id="Search" name="Google" placeholder="Search in Google">
+            <input id="Search" name="Google" autocomplete="off" class="hvr-float-shadow1" placeholder="Search in Google">
         </center>
-        <div class="row">
-            <div class="col-md-2">
-                <div><a href="#"><img style="z-index: 10;" src="google-product-logos/logo_docs_64px.png"></a></div>
+
+        <div class="stuff row" style="padding-top: 3%">
+            <div class="col-md-4">
             </div>
-            <div class="col-md-2">
-                <div><a href="#"><img style="z-index: 10;" src="../img/my-image-2.png"></a></div>
+            <div class="col-md-1">
+                <div><a href="https://docs.google.com"><img class="hvr-float-shadow" style="z-index: 10;" src="google-product-logos/logo_docs_64px.png"></a></div>
             </div>
-            <div class="col-md-2">
-                <div><a href="#"><img style="z-index: 10;" src="../img/my-image-3.png"></a></div>
+            <div class="col-md-1">
+                <div><a href="https://docs.google.com/spreadsheets/"><img class="hvr-float-shadow" style="z-index: 10;" src="google-product-logos/logo_sheets_64px.png"></a></div>
             </div>
-            <div class="col-md-2">
-                <div><a href="#"><img style="z-index: 10;" src="../img/my-image-1.png"></a></div>
+            <div class="col-md-1">
+                <div><a href="https://docs.google.com/presentation/"><img class="hvr-float-shadow" style="z-index: 10;" src="google-product-logos/logo_slides_64px.png"></a></div>
             </div>
-            <div class="col-md-2">
-                <div><a href="#"><img style="z-index: 10;" src="../img/my-image-2.png"></a></div>
+            <div class="col-md-1">
+                <div><a href="http://hangouts.google.com"><img class="hvr-float-shadow" style="z-index: 10;" src="google-product-logos/logo_hangouts_64px.png"></a></div>
             </div>
-            <div class="col-md-2">
-                <div><a href="#"><img style="z-index: 10;" src="../img/my-image-3.png"></a></div>
+            <div class="col-md-4">
             </div>
         </div>
         <form id="ToDoList" autocomplete="off"></form>
@@ -190,9 +245,7 @@
             <p>
                 <!--<em>Failure will not be an option if your determination to succeed is strong enough.</em>-->
             </p>
-
-
-            <input type="text" id="ListItem" name="ListItem" />
+            <input type="text" id="ListItem" name="ListItem" autocomplete="off"/>
 
 
             <button id="xbutton" class="collapsible" type="button">Add</button>
@@ -205,7 +258,7 @@
         </div>
     </div>
 </body>
-<script src="background.js" type="text/javascript"></script>
+
 <script type="text/javascript" src="jquery-ui.js"></script>
 <script src="js/bootstrap.min.js"></script>
 

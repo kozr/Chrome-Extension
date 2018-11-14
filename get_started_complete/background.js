@@ -6,7 +6,10 @@ function setup() {
   img.position(0, 0);
 }
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+  let r = day();
+  let img = createImg('images/' + r + '.jpg');
+  img.size(windowWidth, windowHeight);
+  img.position(0, 0);
 }
 
 function set_body_height() {
@@ -43,36 +46,6 @@ $(document).ready(function () {
   set_body_height();
 });
 
-
-/*
-document.getElementById("Feedback").addEventListener("onclick", )
-*/
-/*
-document.getElementById("ToDoList").addEventListener("button", saveTaskLocal());
-
-
-function saveTaskLocal(e) {
-
-  var ListItem = document.getElementById('ListItem').value;
-
-  var tasks = {
-    ListItem
-  };
-  // 
- 
-    localStorage.setItem('task', JSON.stringify(task));
-
-  } else {
-
-    var myTask = localStorage.getItem('task', JSON.parse(task));
-    myTask.push(task);
-
-    localStorage.setItem('task', JSON.stringify(myTask));
-    task.push(tasks);
-  }
-
-}
-*/
 
 $(document).ready(
   function () {
