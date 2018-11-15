@@ -17,12 +17,7 @@ function set_body_height() {
 
 }
 
-$('#Search').keyup(function (event) {
-  if (event.keyCode == 13) {
-    var q = $("input[name=Google]").val();
-    window.open('http://google.com/search?q=' + q);
-  }
-});
+
 
 $(function () {
 
@@ -52,11 +47,18 @@ $(document).ready(
     for (i = 0; i < 20; i++) {
       if (localStorage.getItem(i) !== null) {
         var toAdd = localStorage.getItem(i);
-        $('ol').append('<li id=' + i + '>' + toAdd + '</li>');
+        $('ol').append('<li id=' + i + '>' + '"' + toAdd + '"' + '</li>');
       }
     };
+    $('#Search').keyup(function (event) {
+      if (event.keyCode === 13) {
+        var q = $("input[name=Google]").val();
+        window.open('http://google.com/search?q=' + q);
+      }
+    });
     $('#xbutton').click(
 
+      
 
       function () {
         for (i = 0; i < 20; i++) {

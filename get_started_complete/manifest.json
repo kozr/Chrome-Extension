@@ -1,6 +1,6 @@
 {
 	"name": "NA",
-	"version": "0.0.0.2",
+	"version": "0.0.0.3",
 	"description": "UX stage",
 	"author": "Nicholas Wong",
 	"permissions": ["activeTab", "declarativeContent", "storage", "tabs"],
