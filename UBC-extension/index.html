@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF=8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> N4AB UX Test </title>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="background.js" type="text/javascript"></script>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+</head>
+
+<style>
+    body {
+            overflow-x: hidden;
+            overflow-y: hidden;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        img {
+            z-index: -10;
+        }
+
+        .container2 {
+            padding: 3vh;
+            padding-top: 0px;
+            background: rgba(255, 255, 255, .6);
+            border-radius: 15px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            font-size: 10px;
+            object-fit: contain;
+            
+        }
+        
+        input:focus{
+            outline: none;
+        }
+
+        form {
+            display: inline-block;
+        }
+        
+        #ListItem {
+            margin-bottom: 1vh;
+        }
+        input {
+            padding: 4px 15px 4px 5px;
+        }
+
+        #xbutton {
+            display: inline-block;
+            background-color: #99ddfc;
+            color: #ffffff;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 2px;
+            padding: 5px 15px;
+        }
+
+        #xbutton:hover {
+            cursor: pointer;
+            opacity: .8;
+        }
+
+        ol {
+            padding-left: 20px;
+        }
+
+        ol li {
+            padding: 5px;
+            color: #000;
+        }
+
+        .strike {
+            text-decoration: line-through;
+        }
+
+        li:hover {
+            cursor: pointer;
+        }
+
+.fadein {
+            opacity: 0;
+            text-align: center;
+            animation: fadein 0.2s ease-in 0s 1 forwards;
+        }
+
+@keyframes fadein {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+
+        .fadeout {
+            opacity: 1;
+            text-align: center;
+            animation: fadeout 0.2s ease-in 0s 1 forwards;
+        }
+
+        @keyframes fadeout {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+        #bootstrap-overrides {
+            z-index: 5;
+            color: white;
+            font-size: 20vmin;
+            text-align: center;
+            height: 10vh;
+            margin-top: 32vh;
+
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .numBox {
+            position: relative;
+        }
+
+        .num {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+         .noSelect {
+            -webkit-user-select: none;
+            /* Webkit */
+            -moz-user-select: none;
+            /* Firefox */
+            -ms-user-select: none;
+            /* IE 10  */
+            /* Currently not supported in Opera but will be soon */
+            -o-user-select: none;
+            user-select: none;
+        }
+
+
+        img {
+            object-fit: cover;
+            margin: auto;
+            max-width: 100%;
+            max-height: 100%;
+                   
+        }
+   
+        #Search {
+            border-radius: 20px;
+            height: 38px;
+            width: 38%;
+            text-align: left;
+            padding-left: 20px;
+            position: relative;
+            z-index: 8;
+            background:rgba(255, 255, 255, .85);
+            border: none;
+            font-size: 10pt;
+            border-radius: 20px;
+            margin-top: 15%;
+            border-style: solid;
+            border-width: 3px;
+            border-color: #99ddfc;
+        }
+        .hvr-float-shadow {
+            display: inline-block;
+            vertical-align: middle;
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+            position: relative;
+            transition-duration: 0.3s;
+            transition-property: transform;
+        }
+
+        .hvr-float-shadow:hover, .hvr-float-shadow:focus, .hvr-float-shadow:active {
+            transform: translateY(-5px);
+            
+        }
+        .hvr-float-shadow:hover:before, .hvr-float-shadow:focus:before, .hvr-float-shadow:active:before {
+            opacity: 1;
+            transform: translateY(5px);
+        
+        }
+
+
+        .hvr-float-shadow1 {
+            display: inline-block;
+            vertical-align: middle;
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+            position: relative;
+            transition-duration: 0.5s;
+            transition-property: transform;
+        }
+
+        .hvr-float-shadow1:focus, .hvr-float-shadow1:active {
+            transform: translateY(-23vh);
+         
+        }
+        .hvr-float-shadow1:focus:before, .hvr-float-shadow1:active:before {
+            opacity: 1;
+            transform: translateY(23vh);
+        }
+        .topleft {
+            position: absolute;
+            top: 3.5vh;
+            left: -2vw;
+            z-index: 0;
+            display: inline-block;
+            object-fit: contain;
+            width: 20vw;
+            height: 20vh;
+        }
+        .col-md-1 {
+            display: block;
+            width: 55px;
+            height: 55px;
+        }
+
+    </style>
+
+
+<body>
+
+    <div id="dog" class="row">
+        <a href="https://www.ubc.ca/"><img class="topleft col-md-2" src="images/UBCCOA.png" /></a>
+    </div>
+    <div class="container-fluid">
+
+        <h1 id="bootstrap-overrides" class="noSelect container"> U B C
+        </h1>
+        <center>
+            <input id="Search" type="url" name="Google" autocomplete="off" class="hvr-float-shadow1" placeholder="Search in Google">
+        </center>
+<div id="cat">
+        <div class="stuff row" style="padding-top: 3%">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-1">
+                <div><a  id="canvas" href="http://canvas.ubc.ca"><img class="hvr-float-shadow" style="z-index: 10;" src="favicon/canvas.ico"></a></div>
+            </div>
+            <div class="col-md-1">
+                <div><a href="https://gradescope.com"><img class="hvr-float-shadow" style="z-index: 10;"
+                            src="favicon/gradescope.ico"></a></div>
+            </div>
+            <div class="col-md-1">
+                <div><a href="https://piazza.com/class"><img class="hvr-float-shadow" style="z-index: 10;"
+                            src="favicon/Piazza-Icon.png"></a></div>
+            </div>
+            <div class="col-md-1">
+                <div><a href="http://ssc.adm.ubc.ca"><img class="hvr-float-shadow" style="z-index: 10;" src="favicon/ubcrev.png"></a></div>
+            </div>
+            <div class="col-md-1">
+                    <div><a href="http://desmos.com/calculator"><img class="hvr-float-shadow" style="z-index: 10;" src="favicon/desmo.png"></a></div>
+                </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+        <form id="ToDoList" autocomplete="off"></form>
+        <div  id="cat" class="container2 num numBox noSelect" id="taskResults">
+            <h2 style="font-size: 20px; font-weight: 600;">To Do</h2>
+            <p>
+                <!--<em>Failure will not be an option if your determination to succeed is strong enough.</em>-->
+            </p>
+            <input type="text" id="ListItem" name="ListItem" autocomplete="off" />
+
+
+            <button id="xbutton" class="collapsible arrow right" type="button">Add</button>
+
+            <br />
+            <ol></ol>
+
+            </form>
+        </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript" src="jquery-ui.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+</html>

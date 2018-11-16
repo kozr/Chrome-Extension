@@ -55,7 +55,7 @@ $(document).ready(
         var q = $("input[name=Google]").val();
         window.open('http://google.com/search?q=' + q);
       }
-    });
+    });   
     $('#xbutton').click(
 
       
@@ -87,6 +87,7 @@ $(document).ready(
     $("input[name=ListItem]").keyup(function (event) {
       if (event.keyCode == 13) {
         $("#xbutton").click();
+        $(this).val('');
       }
     });
 
