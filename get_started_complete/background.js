@@ -5,6 +5,7 @@ function setup() {
   img.size(windowWidth, windowHeight);
   img.position(0, 0);
 }
+
 function windowResized() {
   let r = day();
   let img = createImg('images/' + r + '.jpg');
@@ -47,18 +48,48 @@ $(document).ready(
     for (i = 0; i < 20; i++) {
       if (localStorage.getItem(i) !== null) {
         var toAdd = localStorage.getItem(i);
-        $('ol').append('<li id=' + i + '>' + '"' + toAdd + '"' + '</li>');
+        $('ol').append('<li id=' + i + '>'+ toAdd + '</li>');
       }
     };
+
     $('#Search').keyup(function (event) {
       if (event.keyCode === 13) {
         var q = $("input[name=Google]").val();
-        window.open('http://google.com/search?q=' + q);
+        var patt = new RegExp('^(https?:\\/\\/)?' + // protocol
+          '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name and extension
+          '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
+          '(\\:\\d+)?' + // port
+          '(\\/[-a-z\\d%@_.~+&:]*)*' + // path
+          '(\\?[;&a-z\\d%@_.,~+&:=-]*)?' + // query string
+          '(\\#[-a-z\\d_]*)?$', 'i');
+        var res = patt.test(q);
+        if (res) {
+          window.open('https://' + q);
+        } else {
+          window.open('http://google.com/search?q=' + q);
+        }
       }
-    });   
-    $('#xbutton').click(
+    });
 
-      
+    
+    $('#Search').on('focus', function () {
+      $('#bootstrap-overrides').removeClass('fadein')
+      $('#bootstrap-overrides').addClass('fadeout')
+      $('#cat').removeClass('fadein')
+      $('#cat').addClass('fadeout')
+      $('#dog').removeClass('fadein')
+      $('#dog').addClass('fadeout')
+    });
+    $('#Search').on('focusout', function () {
+      $('#bootstrap-overrides').removeClass('fadeout')
+      $('#bootstrap-overrides').addClass('fadein')
+      $('#cat').removeClass('fadeout')
+      $('#cat').addClass('fadein')
+      $('#dog').removeClass('fadeout')
+      $('#dog').addClass('fadein')
+    });
+    
+    $('#xbutton').click(
 
       function () {
         for (i = 0; i < 20; i++) {
@@ -77,13 +108,13 @@ $(document).ready(
           }
         }
       });
-      $(window).on('resize', function(){
-        noCanvas();
-        let r = day();
-        let img = createImg('images/' + r + '.jpg');
-        img.size(windowWidth, windowHeight);
-        img.position(0, 0);
-      });
+    $(window).on('resize', function () {
+      noCanvas();
+      let r = day();
+      let img = createImg('images/' + r + '.jpg');
+      img.size(windowWidth, windowHeight);
+      img.position(0, 0);
+    });
     $("input[name=ListItem]").keyup(function (event) {
       if (event.keyCode == 13) {
         $("#xbutton").click();

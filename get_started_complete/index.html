@@ -25,25 +25,23 @@
     body {
             overflow-x: hidden;
             overflow-y: hidden;
-         
             background-attachment: fixed;
+            background-size: cover;
         }
 
         img {
-            
             z-index: -10;
-            bottom: 0px;
         }
 
         .container2 {
-            padding: 18px;
-            padding-top: 8px;
+            padding: 3vh;
+            padding-top: 0px;
             background: rgba(255, 255, 255, .6);
             border-radius: 15px;
             border-bottom-left-radius: 0px;
             border-bottom-right-radius: 0px;
-            font-size: 12px;
-            width: 275px;
+            font-size: 10px;
+            object-fit: contain;
             
         }
         
@@ -56,7 +54,7 @@
         }
         
         #ListItem {
-            margin-bottom: 10px;
+            margin-bottom: 1vh;
         }
         input {
             padding: 4px 15px 4px 5px;
@@ -94,15 +92,44 @@
             cursor: pointer;
         }
 
-
-        #bootstrap-overrides {
-            z-index: 1;
-            color: white;
-            font-size: 1000%;
+.fadein {
+            opacity: 0;
             text-align: center;
-            line-height: 380%;
-            font-weight: 700;
-            height: 388px;
+            animation: fadein 0.2s ease-in 0s 1 forwards;
+        }
+
+@keyframes fadein {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+
+        .fadeout {
+            opacity: 1;
+            text-align: center;
+            animation: fadeout 0.2s ease-in 0s 1 forwards;
+        }
+
+        @keyframes fadeout {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+        #bootstrap-overrides {
+            z-index: 5;
+            color: white;
+            font-size: 20vmin;
+            text-align: center;
+            height: 10vh;
+            margin-top: 32vh;
+
         }
 
         h2 {
@@ -133,11 +160,11 @@
 
 
         img {
-            display: cover;
+            object-fit: cover;
             margin: auto;
             max-width: 100%;
             max-height: 100%;
-        
+                   
         }
    
         #Search {
@@ -153,11 +180,13 @@
             font-size: 10pt;
             border-radius: 20px;
             margin-top: 15%;
+            border-style: double;
+            border-width: 0px;
+            border-color: #99ddfc;
         }
         .hvr-float-shadow {
             display: inline-block;
             vertical-align: middle;
-            -webkit-transform: perspective(1px) translateZ(0);
             transform: perspective(1px) translateZ(0);
             box-shadow: 0 0 1px rgba(0, 0, 0, 0);
             position: relative;
@@ -166,45 +195,34 @@
         }
 
         .hvr-float-shadow:hover, .hvr-float-shadow:focus, .hvr-float-shadow:active {
-            -webkit-transform: translateY(-5px);
             transform: translateY(-5px);
-            /* move the element up by 5px */
+            
         }
         .hvr-float-shadow:hover:before, .hvr-float-shadow:focus:before, .hvr-float-shadow:active:before {
             opacity: 1;
-            -webkit-transform: translateY(5px);
             transform: translateY(5px);
-        /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+        
         }
 
 
         .hvr-float-shadow1 {
             display: inline-block;
             vertical-align: middle;
-            -webkit-transform: perspective(1px) translateZ(0);
             transform: perspective(1px) translateZ(0);
             box-shadow: 0 0 1px rgba(0, 0, 0, 0);
             position: relative;
-            -webkit-transition-duration: 0.5s;
             transition-duration: 0.5s;
-            -webkit-transition-property: transform;
             transition-property: transform;
         }
 
-        .hvr-float-shadow1:focus, .hvr-float-shadow1:focus, .hvr-float-shadow1:active {
-            -webkit-transform: translateY(-600%);
-            transform: translateY(-600%);
-            /* move the element up by 5px */
+        .hvr-float-shadow1:focus, .hvr-float-shadow1:active {
+            transform: translateY(-23vh);
+         
         }
-        .hvr-float-shadow1:focus:before, .hvr-float-shadow1:focus:before, .hvr-float-shadow1:active:before {
+        .hvr-float-shadow1:focus:before, .hvr-float-shadow1:active:before {
             opacity: 1;
-            -webkit-transform: translateY(600%);
-            transform: translateY(600%);
-        /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+            transform: translateY(23vh);
         }
-
-   
-
 
     </style>
 
@@ -212,9 +230,9 @@
 <body>
     <div class="container-fluid">
         <h1 id="bootstrap-overrides" class="noSelect container"> study up
-        </h1>
+        </h1><!--add URL regex-->
         <center>
-            <input id="Search" name="Google" autocomplete="off" class="hvr-float-shadow1" placeholder="Search in Google">
+            <input id="Search" name="Google" autocomplete="off" class="hvr-float-shadow1" placeholder="Search in Google or type a URL">
         </center>
 
         <div class="stuff row" style="padding-top: 3%">

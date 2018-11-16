@@ -26,7 +26,7 @@ $(document).ready(
     for (i = 0; i < 20; i++) {
       if (localStorage.getItem(i) !== null) {
         var toAdd = localStorage.getItem(i);
-        $('ol').append('<li id=' + i + '>' + toAdd + '</li>');
+        $('ol').append('<li style="color:white; font-size:11px;" id=' + i + '>' + toAdd + '</li>');
       }
 
     };
@@ -93,34 +93,27 @@ $(document).ready(
       down[e.keyCode] = false;
     });
 
-    $('#xbutton').click(
-
-
-
-      function () {
-        for (i = 0; i < 20; i++) {
-          if (localStorage.getItem(i) == null) {
-            i;
-
-            var toAdd = $('input[name=ListItem]').val();
-
-            localStorage.setItem(i, JSON.stringify(toAdd));
-
-            $('ol').append('<li id=' + i + '>' + toAdd + '</li>');
-            $("#clear").val('');
-            break;
-
-
-          }
-        }
-      });
-    $(window).on('resize', function () {
-
-    });
+    
     $("input[name=ListItem]").keyup(function (event) {
       if (event.keyCode == 13) {
-        $("#xbutton").click();
-        $(this).val('');
+        $(function () {
+          for (i = 0; i < 20; i++) {
+            if (localStorage.getItem(i) == null) {
+              i;
+  
+              var toAdd = $('input[name=ListItem]').val();
+  
+              localStorage.setItem(i, JSON.stringify(toAdd));
+  
+              $('ol').append('<li id=' + i + '>' + toAdd + '</li>');
+              $('#ListItem').val('');
+              break;
+  
+  
+            }
+          }
+        });
+        
       }
     });
 
