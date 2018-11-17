@@ -55,11 +55,11 @@
         #ListItem {
             margin-bottom: 1vh;
             background: transparent;
-    border: none;
-    border-bottom: 1px solid white;
+            border: none;
+            border-bottom: 1px solid white;
         }
         input {
-            padding: 4px 15px 4px 5px;
+            padding: 4px 25px 4px 5px;
         }
 
         ol {
@@ -79,20 +79,20 @@
             cursor: pointer;
         }
 
-.fadein {
-            opacity: 0;
-            text-align: center;
-            animation: fadein 0.2s ease-in 0s 1 forwards;
-        }
+        .fadein {
+                    opacity: 0;
+                    text-align: center;
+                    animation: fadein 0.2s ease-in 0s 1 forwards;
+                }
 
-@keyframes fadein {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
+        @keyframes fadein {
+                    from {
+                        opacity: 0;
+                    }
+                    to {
+                        opacity: 1;
+                    }
+                }
 
 
         .fadeout {
@@ -163,14 +163,19 @@
             padding-left: 20px;
             position: relative;
             z-index: 8;
-            background:rgba(255, 255, 255, .85);
+            background:rgba(255, 255, 255, .38);
             border: none;
             font-size: 10pt;
             border-radius: 20px;
             margin-top: 15%;
-            border-style: double;
-            border-width: 0px;
-            border-color: #99ddfc;
+            border-style: solid;
+            border-width: 2px;
+            border-color: white;
+            color: white;
+
+        }
+        #Search::placeholder {
+            color:rgba(255, 255, 255, 0.9);
         }
         .hvr-float-shadow {
             display: inline-block;
@@ -229,6 +234,7 @@
         .whiteplaceholder::placeholder {
             color: white;
         }
+
 
     </style>
 

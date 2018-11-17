@@ -52,20 +52,14 @@ $(document).ready(
 
 
     $('#Search').on('focus', function () {
-      $('#bootstrap-overrides').removeClass('fadein')
-      $('#bootstrap-overrides').addClass('fadeout')
-      $('#cat').removeClass('fadein')
-      $('#cat').addClass('fadeout')
-      $('#dog').removeClass('fadein')
-      $('#dog').addClass('fadeout')
+      $('#bootstrap-overrides').removeClass('fadein').addClass('fadeout')
+      $('#cat').removeClass('fadein').addClass('fadeout')
+      $('#dog').removeClass('fadein').addClass('fadeout')
     });
     $('#Search').on('focusout', function () {
-      $('#bootstrap-overrides').removeClass('fadeout')
-      $('#bootstrap-overrides').addClass('fadein')
-      $('#cat').removeClass('fadeout')
-      $('#cat').addClass('fadein')
-      $('#dog').removeClass('fadeout')
-      $('#dog').addClass('fadein')
+      $('#bootstrap-overrides').removeClass('fadeout').addClass('fadein')
+      $('#cat').removeClass('fadeout').addClass('fadein')
+      $('#dog').removeClass('fadeout').addClass('fadein')
     });
 
     $('body').css('background-image', 'url(' + img + ')');
