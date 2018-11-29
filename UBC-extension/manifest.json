@@ -1,6 +1,6 @@
 {
-	"name": "UBC tab (unofficial)",
-	"version": "0.0.0.1",
+	"name": "UBC Dashboard (unofficial)",
+	"version": "0.0.0.2",
 	"description": "Beta V0.0.0.1",
 	"author": "Nicholas Wong",
 	"permissions": ["activeTab", "declarativeContent", "storage", "tabs"],
