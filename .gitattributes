@@ -1,4 +1,3 @@
 special-vendored-path/* linguist-vendored
 background.js linguist-vendored=fasle
-index.html linguist-vendored=true
 popup.html linguist-vendored=true
