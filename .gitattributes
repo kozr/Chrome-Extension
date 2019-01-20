@@ -1,2 +1,3 @@
 special-vendored-path/* linguist-vendored
-background.js linguist-vendored=false
+background.js linguist-vendored=fasle
+index.html linguist-vendored=true
